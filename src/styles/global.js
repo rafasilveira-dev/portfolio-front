@@ -4,8 +4,8 @@ export default createGlobalStyle`
   @font-face {
       font-family: 'Montserrat';
       src: local('Montserrat Regular'), local('Montserrat-Regular'),
-          url('Montserrat-Regular.woff2') format('woff2'),
-          url('Montserrat-Regular.woff') format('woff');
+          url('../fonts/Montserrat-Regular.woff2') format('woff2'),
+          url('../fonts/Montserrat-Regular.woff') format('woff');
       font-weight: normal;
       font-style: normal;
       font-display: swap;
@@ -14,8 +14,8 @@ export default createGlobalStyle`
   @font-face {
       font-family: 'Fira Code';
       src: local('Fira Code Bold'), local('FiraCode-Bold'),
-          url('FiraCode-Bold.woff2') format('woff2'),
-          url('FiraCode-Bold.woff') format('woff');
+          url('../fonts/FiraCode-Bold.woff2') format('woff2'),
+          url('../fonts/FiraCode-Bold.woff') format('woff');
       font-weight: bold;
       font-style: normal;
       font-display: swap;
@@ -24,8 +24,8 @@ export default createGlobalStyle`
   @font-face {
       font-family: 'Fira Code';
       src: local('Fira Code Regular'), local('FiraCode-Regular'),
-          url('FiraCode-Regular.woff2') format('woff2'),
-          url('FiraCode-Regular.woff') format('woff');
+          url('../fonts/FiraCode-Regular.woff2') format('woff2'),
+          url('../fonts/FiraCode-Regular.woff') format('woff');
       font-weight: normal;
       font-style: normal;
       font-display: swap;

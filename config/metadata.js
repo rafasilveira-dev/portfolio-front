@@ -1,7 +1,8 @@
 module.exports = {
   title: `Rafa Silveira`,
-  siteUrl: `https://www.rafasilveira.dev`,
+  siteUrl: `https://rafasilveira.dev`,
   description: `Vamos criar algo novo?`,
+  email: `oi@rafasilveira.dev`,
   social: [
     {
       name: 'github',

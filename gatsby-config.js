@@ -6,6 +6,13 @@
 
 const siteMetadata = require('./config/metadata')
 
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = siteMetadata.siteUrl,
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env
+
 // o que tá aqui vai ser exposto no graphql e pode ser consumido no front
 module.exports = {
   /* Your site config here */
@@ -19,7 +26,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Rafa Silveira`,
-        short_name: `rs.`,
+        short_name: `Rafa Silveira`,
         start_url: `/`,
         background_color: `#333`,
         theme_color: `#61DAFB`,
@@ -44,7 +51,7 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here
-        displayName: process.env.NODE_ENV !== 'production'
+        displayName: NODE_ENV !== 'production'
       },
     },
 
@@ -59,6 +66,39 @@ module.exports = {
 
     // sitemap (só gera em build)
     `gatsby-plugin-sitemap`,
+
+    // robots
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: '*' }],
+          },
+          'branch-deploy': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+          'deploy-preview': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+        },
+      },
+    },
+
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ["Fira Code, Montserrat"],
+          urls: ["/fonts/fonts.css"],
+        },
+      },
+    },
 
     // configurar o netlify a partir do Gatsby
     `gatsby-plugin-netlify`,

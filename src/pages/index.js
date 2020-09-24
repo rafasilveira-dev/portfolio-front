@@ -1,5 +1,13 @@
 import React from "react"
 
-export default function Home() {
-  return <div>Hello world!</div>
-}
+import Soon from '../components/soon'
+import { Reset } from 'styled-reset'
+import global from '../styles/global' 
+
+const GlobalStyle = global
+
+export default () => (<>
+  <Reset />
+  <GlobalStyle />
+  <Soon />
+</>)

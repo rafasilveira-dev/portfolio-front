@@ -1,7 +1,6 @@
 import React from "react"
 
 import Soon from '../components/soon'
-import JsonLD from '../components/jsonLd'
 import { Reset } from 'styled-reset'
 import global from '../styles/global' 
 import { Helmet } from "react-helmet"

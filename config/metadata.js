@@ -1,7 +1,7 @@
 module.exports = {
   title: `Rafa Silveira`,
   siteUrl: `https://rafasilveira.dev`,
-  description: `Vamos criar algo novo?`,
+  description: `Opa, tudo certo? Eu desenvolvo sites. Vamos criar algo novo?`,
   email: `oi@rafasilveira.dev`,
   social: [
     {

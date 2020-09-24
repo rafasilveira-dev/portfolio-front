@@ -41,7 +41,7 @@ export default () => {
       <div>
         { data.site.siteMetadata.social.map(item => {
           return (<>
-            <a href={item.url} title={`Clique aqui para ir ao meu ${item.name}`} target="_blank" rel="noopener noreferrer external">
+            <a href={item.url} title={`Clique aqui para ir ao meu ${item.name}`} target="_blank" rel="noopener noreferrer external" key={item.name}>
               {socials[item.name]}
             </a>
           </>)

@@ -15,14 +15,31 @@ export default () => (<>
   <main>
     <Helmet>
       <html lang='pt-BR' />
-      <title>Rafa Silveira</title>
-      <description>Opa! Sou o Rafael Bourscheid da Silveira, desenvolvedor JavaScript.</description>
-      <JsonLD>
-        {{
+      <title>{metadata.title}</title>
+
+      <meta name="keywords" content="Rafael Bourscheid da Silveira desenvolvedor web front frontend seo freela freelance freelancer programador site app landing page aplicativo landingpage sites javascript react jquery html css" />
+      <meta name="description" content={metadata.description} />
+
+      <meta property="og:locale" content="pt_BR" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={metadata.title} />
+      <meta property="og:url" content={metadata.siteUrl} />
+      <meta property="og:site_name" content={metadata.title} />
+      <meta property="og:image" content={`${metadata.siteUrl}/me.jpg`} />
+      <meta property="og:description" content="Opa, tudo certo? Eu desenvolvo sites." />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Rafael Silveira | Desenvolvedor web freelance" />
+      <meta name="twitter:description" content={metadata.description} />
+      <meta name="twitter:url" content={metadata.siteUrl} />
+      <meta name="twitter:image" content={`${metadata.siteUrl}/me.jpg`} />
+
+      <script type="application/ld+json">
+        {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
           "email": `${metadata.email}`,
-          "image": "static/me.jpg",
+          "image": `${metadata.siteUrl}/me.jpg`,
           "jobTitle": "JavaScript Developer",
           "name": "Rafael Bourscheid da Silveira",
           "alumniOf": {
@@ -52,9 +69,9 @@ export default () => (<>
           "disambiguatingDescription": "JavaScript developer",
           "nationality": "Brazilian",
           "url": `${metadata.siteUrl}`,
-          "sameAs" : `${metadata.social.filter(s => s.name !== 'whatsapp').map(({name, url}) => { return url } )}`
-        }}
-      </JsonLD>
+          "sameAs" : metadata.social.filter(s => s.name !== 'whatsapp').map(({name, url}) => { return url })
+        })}
+      </script>
     </Helmet>
     <Soon />
   </main>

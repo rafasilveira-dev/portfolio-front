@@ -45,6 +45,7 @@ export const Container = styled.div`
       color: ${props => props.theme.primary};
       transition: color 0.25s linear;
       font-size: 1.5rem;
+      padding: .25rem;
 
       &:hover {
         color: ${props => props.theme.accent};
